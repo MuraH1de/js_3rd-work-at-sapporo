@@ -81,7 +81,7 @@
 
         // Your web app's Firebase configuration
         const firebaseConfig = {
-            // ★★★　消してます　★★★
+            // ★★★　消してます　★★★★
         };
 
         // Initialize Firebase
@@ -119,6 +119,8 @@
         let aite_h; //Headerの表示に使う変数
         let aite;
         let jibun;
+
+        let table_no;
 
         
         $("#select-ok2").on("click", function(){
@@ -199,6 +201,7 @@
 
                 //console.log(ut.tblno);
                 dbRef = ref(db, ut.tblno); //chat用データベースを使うか指定
+                table_no = ut.tblno;
                 //Usertableの設定終了
             }
             
@@ -295,8 +298,8 @@
         //全消し
         $('#output').on('click', function () {
             console.log(dbRef);
-            console.log(ref(db,"tbl-35"));
-            remove(ref(db,"tbl-35"));
+            console.log(ref(db, table_no));
+            remove(ref(db, table_no));
         });
 
 
